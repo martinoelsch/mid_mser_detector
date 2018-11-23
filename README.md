@@ -6,6 +6,8 @@ For limited bandwidth applications (e.g. remote SLAM) a specific number of featu
 
 Oelsch et al. [2] evaluated the performance various feature extraction algorithms in a Mars-like environment. The authors found that MSER could benefit from a metric that can be used for post-filtering the detected regions. We use the same experimental setup with a location retrieval task using the Devon Island dataset [3]. In the following we provide a table of parameters we used during the region detection process. Note that the parameters for the method 'Manual' were selected in order to detect on average more than 1000 regions per image over the whole dataset. The parameter setting for 'All' detects more than 3000 regions on average per image. From this set of regions the contrast-based grid adapted methods select a subset of regions according to their contrast metric. DGA independently detects the appropriate number of regions by dynamic parameter adjustment as a wrapper around the MSER detector.
 
+For the MSER we used the OpenCV 3.3.0 implementation [5] and as descriptor we used OpenSURF [6].
+
 ## MSER Configuration
 | Method  |    Parameters       |
 | --------- | --------------------- |
@@ -23,3 +25,5 @@ Oelsch et al. [2] evaluated the performance various feature extraction algorithm
 - [2] M. Oelsch, D. V. Opdenbosch and E. Steinbach, "Survey of Visual Feature Extraction Algorithms in a Mars-like Environment," 2017 IEEE International Symposium on Multimedia (ISM), Taichung, 2017
 - [3] [Devon Island Rover Navigation Dataset](http://asrl.utias.utoronto.ca/datasets/devon-island-rover-navigation/rover-traverse.html#Overview)
 - [4] Y. Li, W. Jia, C. Shen and A. van den Hengel, "Characterness: An Indicator of Text in the Wild," in IEEE Transactions on Image Processing, vol. 23, no. 4, pp. 1666-1677, April 2014.
+- [5] [Open Source Computer Vision Library](https://opencv.org)
+- [6] C. Evans, "Notes on the opensurf library", University of Bristol, Tech. Rep., 2009
